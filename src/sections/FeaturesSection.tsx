@@ -9,9 +9,6 @@ import {
   LayoutDashboard,
   Zap,
 } from "lucide-react";
-import { SectionWrapper } from "@/components/ui/section-wrapper";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 
 const features = [
   {
@@ -82,37 +79,34 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <SectionWrapper
-      id="features"
-      className="bg-white dark:bg-slate-900"
-    >
-      {/* Header */}
-      <div className="text-center mb-16">
-        <p className="text-sm font-semibold text-blue-600 dark:text-blue-400 uppercase tracking-widest mb-3">
-          Enterprise Solutions
-        </p>
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 dark:text-white max-w-3xl mx-auto">
-          Everything you need to build a{" "}
-          <span className="gradient-text">learning organization</span>
-        </h2>
-        <p className="mt-5 text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">
-          From personalized learning paths to real-time analytics, Accredian gives
-          your L&D team the full toolkit to drive measurable growth.
-        </p>
-      </div>
+    <section id="features" className="section-padding bg-white">
+      <div className="container-max">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
+            Enterprise Solutions
+          </p>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 max-w-3xl mx-auto">
+            Everything you need to build a{" "}
+            <span className="gradient-text">learning organization</span>
+          </h2>
+          <p className="mt-5 text-lg text-slate-500 max-w-2xl mx-auto">
+            From personalized learning paths to real-time analytics, Accredian gives
+            your L&D team the full toolkit to drive measurable growth.
+          </p>
+        </div>
 
-      {/* Features Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {features.map((feature, idx) => (
-          <Card
-            key={feature.title}
-            className={`group relative transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-default ${
-              feature.highlight
-                ? "bg-gradient-to-br from-blue-600 to-blue-800 border-transparent text-white shadow-lg shadow-blue-500/20 dark:from-blue-700 dark:to-blue-900"
-                : "bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700 hover:border-blue-200 dark:hover:border-blue-600"
-            }`}
-          >
-            <CardHeader>
+        {/* Features Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, idx) => (
+            <div
+              key={feature.title}
+              className={`group relative rounded-2xl p-6 border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-default ${
+                feature.highlight
+                  ? "bg-gradient-to-br from-blue-600 to-blue-800 border-transparent text-white shadow-lg shadow-blue-500/20"
+                  : "bg-white border-slate-200 hover:border-blue-200"
+              }`}
+            >
               {/* Icon */}
               <div
                 className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${
@@ -121,22 +115,22 @@ export default function FeaturesSection() {
                     : `bg-gradient-to-br ${feature.color}`
                 }`}
               >
-                <feature.icon className="w-6 h-6 text-white" />
+                <feature.icon
+                  className={`w-6 h-6 ${feature.highlight ? "text-white" : "text-white"}`}
+                />
               </div>
 
               {/* Content */}
-              <CardTitle
+              <h3
                 className={`font-bold text-lg mb-2 ${
-                  feature.highlight ? "text-white" : "text-slate-900 dark:text-white"
+                  feature.highlight ? "text-white" : "text-slate-900"
                 }`}
               >
                 {feature.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
+              </h3>
               <p
                 className={`text-sm leading-relaxed ${
-                  feature.highlight ? "text-blue-100" : "text-slate-500 dark:text-slate-400"
+                  feature.highlight ? "text-blue-100" : "text-slate-500"
                 }`}
               >
                 {feature.description}
@@ -148,20 +142,21 @@ export default function FeaturesSection() {
                   className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${feature.color} rounded-b-2xl opacity-0 group-hover:opacity-100 transition-opacity`}
                 />
               )}
-            </CardContent>
-          </Card>
-        ))}
-      </div>
+            </div>
+          ))}
+        </div>
 
-      {/* Bottom CTA */}
-      <div className="mt-16 text-center">
-        <Button>
-          <a href="#lead-form" className="flex items-center gap-2">
+        {/* Bottom CTA */}
+        <div className="mt-16 text-center">
+          <a
+            href="#lead-form"
+            className="inline-flex items-center gap-2 gradient-bg text-white font-semibold px-8 py-4 rounded-2xl hover:opacity-90 hover:shadow-lg hover:shadow-blue-500/25 transition-all duration-200"
+          >
             Explore All Features
             <Zap className="w-4 h-4" />
           </a>
-        </Button>
+        </div>
       </div>
-    </SectionWrapper>
+    </section>
   );
 }

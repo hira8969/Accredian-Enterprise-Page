@@ -1,13 +1,13 @@
-"use client";
-import { useState } from "react";
+﻿"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Play, Users, Award, BookOpen, TrendingUp, X } from "lucide-react";
 
 const stats = [
-  { icon: Users, value: "15+", label: "Projects Completed" },
-  { icon: BookOpen, value: "3+", label: "Years Experience" },
-  { icon: Award, value: "10+", label: "Technologies Mastered" },
-  { icon: TrendingUp, value: "100%", label: "Client Satisfaction" },
+  { icon: Users, value: "10K+", label: "Professionals Trained" },
+  { icon: BookOpen, value: "200+", label: "Sessions Delivered" },
+  { icon: Award, value: "5K+", label: "Active Learners" },
+  { icon: TrendingUp, value: "94%", label: "Completion Rate" },
 ];
 
 export default function HeroSection() {
@@ -43,17 +43,14 @@ export default function HeroSection() {
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-              Hi, I'm{" "}
+              Next-Gen Expertise For Your{" "}
               <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                Hira Lal Kumar
-              </span>{" "}
-              <br />
-              Web Developer from Bhubaneswar
+                Enterprise
+              </span>
             </h1>
 
             <p className="text-lg text-slate-300 leading-relaxed max-w-xl">
-              I create modern, responsive web applications using the latest technologies.
-              Let's build something amazing together.
+              Cultivate high-performance teams through expert learning. Partner with Accredian to deliver world-class, IIT & top-university backed certification programs to your employees.
             </p>
 
             {/* CTAs */}
@@ -63,7 +60,7 @@ export default function HeroSection() {
                 href="#lead-form"
                 className="group gradient-bg text-white font-semibold px-8 py-4 rounded-2xl hover:opacity-90 hover:shadow-2xl hover:shadow-blue-500/30 transition-all duration-300 flex items-center justify-center gap-2 active:scale-95"
               >
-                Let's Work Together
+                Enquire Now
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <button
@@ -74,16 +71,16 @@ export default function HeroSection() {
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:bg-white/30 transition-colors">
                   <Play className="w-4 h-4 fill-white text-white ml-0.5" />
                 </div>
-                View My Work
+                Watch Demo
               </button>
             </div>
 
             <p className="text-sm text-slate-400 flex items-center gap-2">
-              <span className="text-green-400">✓</span> Modern web technologies
+              <span className="text-green-400">✓</span> No credit card required
               <span className="mx-2 text-slate-600">·</span>
-              <span className="text-green-400">✓</span> Responsive design
+              <span className="text-green-400">✓</span> 14-day free pilot
               <span className="mx-2 text-slate-600">·</span>
-              <span className="text-green-400">✓</span> Performance optimized
+              <span className="text-green-400">✓</span> Dedicated L&D manager
             </p>
           </div>
 
@@ -177,7 +174,7 @@ export default function HeroSection() {
             >
               <div className="flex justify-center mb-3">
                 <div className="w-10 h-10 bg-blue-500/20 rounded-xl flex items-center justify-center group-hover:bg-blue-500/30 transition-colors">
-                  <stat.icon className="w-5 h-5 text-blue-400" />
+                  {React.createElement(stat.icon, { className: "w-5 h-5 text-blue-400" })}
                 </div>
               </div>
               <p className="text-2xl md:text-3xl font-extrabold text-white">{stat.value}</p>
@@ -213,7 +210,7 @@ export default function HeroSection() {
               <p className="text-slate-400 text-sm">2 min overview · No sign-up required</p>
               <div className="mt-4 flex gap-3">
                 <Link
-                  href="/signup"
+                  href="#lead-form"
                   onClick={() => setShowDemo(false)}
                   className="gradient-bg text-white font-semibold px-6 py-3 rounded-xl hover:opacity-90 transition-opacity text-sm flex items-center gap-2"
                 >

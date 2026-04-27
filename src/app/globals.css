@@ -16,48 +16,27 @@
     --gradient-end: #06b6d4;
   }
 
-  .dark {
-    --primary: #3b82f6;
-    --primary-dark: #2563eb;
-    --accent: #06b6d4;
-    --bg: #0f172a;
-    --surface: #1e293b;
-    --text: #f8fafc;
-    --text-muted: #94a3b8;
-    --border: #334155;
-    --gradient-start: #3b82f6;
-    --gradient-end: #06b6d4;
-  }
-
   html {
     scroll-behavior: smooth;
   }
 
   body {
-    @apply bg-white text-slate-900 antialiased transition-colors duration-300;
+    @apply bg-white text-slate-900 antialiased;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
-  .dark body {
-    @apply bg-slate-900 text-slate-100;
-  }
-
   * {
-    @apply border-slate-200 dark:border-slate-700;
+    @apply border-slate-200;
   }
 }
 
 @layer utilities {
   .gradient-text {
-    @apply bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent dark:from-blue-400 dark:to-cyan-400;
+    @apply bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent;
   }
 
   .gradient-bg {
     background: linear-gradient(135deg, #1a56db 0%, #06b6d4 100%);
-  }
-
-  .dark .gradient-bg {
-    background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
   }
 
   .glass {
@@ -65,11 +44,6 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-  }
-
-  .dark .glass {
-    background: rgba(15, 23, 42, 0.8);
-    border: 1px solid rgba(51, 65, 85, 0.3);
   }
 
   .section-padding {
@@ -119,12 +93,4 @@
 ::-webkit-scrollbar-thumb {
   background: #1a56db;
   border-radius: 3px;
-}
-
-.dark ::-webkit-scrollbar-track {
-  background: #1e293b;
-}
-
-.dark ::-webkit-scrollbar-thumb {
-  background: #3b82f6;
 }
