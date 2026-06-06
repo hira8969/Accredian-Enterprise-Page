@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { GraduationCap, Eye, EyeOff, Loader2, ArrowRight, Lock, Mail, User, Building2, CheckCircle } from "lucide-react";
 
+
 export default function SignupPage() {
   const router = useRouter();
   const [form, setForm] = useState({
