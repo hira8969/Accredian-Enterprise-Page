@@ -31,4 +31,5 @@ export default function RootLayout({
       <body className="font-sans">{children}</body>
     </html>
   );
+}
 
